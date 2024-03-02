@@ -1,0 +1,36 @@
+# Config for Dependabot updates. See Documentation here:
+# https://docs.github.com/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+  # Update Python deps for the template (not the generated project)
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    labels:
+      - "project infrastructure"
+
+  # Update Python deps for the documentation
+  - package-ecosystem: "pip"
+    directory: "docs/"
+    schedule:
+      interval: "daily"
+    labels:
+      - "project infrastructure"
+
+  # Update GitHub actions in workflows
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    labels:
+      - "project infrastructure"
+
+  # Update npm packages
+  - package-ecosystem: "npm"
+    directory: "marombei/"
+    schedule:
+      interval: "daily"
+    labels:
+      - "update"
